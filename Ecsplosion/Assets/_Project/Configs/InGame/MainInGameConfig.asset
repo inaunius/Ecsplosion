@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1179431bcad294a8da7e76be695c0d, type: 3}
+  m_Name: MainInGameConfig
+  m_EditorClassIdentifier: 
+  <BusinessConfigs>k__BackingField:
+  - <Config>k__BackingField: {fileID: 11400000, guid: b22447b45e0bd7b4e92cbbf4f4a9fd0b, type: 2}
+    <IsBoughtAtStart>k__BackingField: 1
+  - <Config>k__BackingField: {fileID: 11400000, guid: 3a28e6a1597a563479a4df7222c7c239, type: 2}
+    <IsBoughtAtStart>k__BackingField: 0
+  - <Config>k__BackingField: {fileID: 11400000, guid: 6aa5143b7efa73647978c32b3d2ffea6, type: 2}
+    <IsBoughtAtStart>k__BackingField: 0
+  - <Config>k__BackingField: {fileID: 11400000, guid: 41bf9ce4a8432264ba84b46c4e73985a, type: 2}
+    <IsBoughtAtStart>k__BackingField: 0
+  - <Config>k__BackingField: {fileID: 11400000, guid: 6a54eb2e498ac8840b46b1a448a17a5b, type: 2}
+    <IsBoughtAtStart>k__BackingField: 0
