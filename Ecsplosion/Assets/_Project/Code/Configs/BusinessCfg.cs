@@ -17,6 +17,6 @@ namespace Inaunius.Ecsplosion.Configs
 
         [field: SerializeField] public float BaseIncome { get; private set; }
 
-        [field: SerializeField] public UpgradeId[] Upgrades { get; private set; }
+        [field: SerializeField] public BusinessUpgradeId[] Upgrades { get; private set; }
     }
 }

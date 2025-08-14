@@ -5,13 +5,15 @@ using UnityEngine;
 
 namespace Inaunius.Ecsplosion.Common 
 {
-  [Serializable]
-  public class InspectorDictionary<TKey, TValue> {
+    [Serializable]
+    public class InspectorDictionary<TKey, TValue>
+    {
         [SerializeField] private List<KeyValuePairEntry<TKey, TValue>> _entries;
 		[SerializeField] private bool _shouldCache = true;
 		private Dictionary<TKey, TValue> _cached;
 
-		public Dictionary<TKey, TValue> AsDictionary {
+		public Dictionary<TKey, TValue> AsDictionary
+        {
 			get
             {
                 if (!_shouldCache)
@@ -29,5 +31,5 @@ namespace Inaunius.Ecsplosion.Common
           [field: SerializeField] public UKey Key { get; private set; }
           [field: SerializeField] public UValue Value { get; private set; }
         }
-  } 
+    }
 }

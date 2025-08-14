@@ -11,7 +11,5 @@ namespace Inaunius.Ecsplosion.UI
         [SerializeField] private Transform _businessCardsParent;
 
         [SerializeField] private BusinessCardUI _businessCardPrefab;
-
-        
     }
 }

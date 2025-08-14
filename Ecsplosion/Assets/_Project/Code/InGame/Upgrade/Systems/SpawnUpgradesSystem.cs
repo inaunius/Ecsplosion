@@ -5,29 +5,29 @@ using Leopotam.EcsLite;
 
 namespace Inaunius.Ecsplosion.InGame.Upgrade
 {
-    public class LoadUpgradesSystem : IEcsInitSystem
+    public class SpawnUpgradesSystem : IEcsInitSystem
     {
         private readonly InGameCfg _config;
 
-        private EcsWorld _ecsWorld;
+        private EcsWorld _world;
 
-        public LoadUpgradesSystem(InGameCfg config)
+        public SpawnUpgradesSystem(InGameCfg config)
         {
             _config = config;
         }
 
         public void Init(IEcsSystems systems)
         {
-            _ecsWorld = systems.GetWorld();
+            _world = systems.GetWorld();
 
-            var upgradeInfoPool = _ecsWorld.GetPool<UpgradeInfo>();
-            var incomeMultiplier = _ecsWorld.GetPool<IncomeMultiplier>();
-            var improvementPool =_ecsWorld.GetPool<Improvement>();
-            var developmentLevelPool = _ecsWorld.GetPool<DevelopmentLvl>();
+            var upgradeInfoPool = _world.GetPool<UpgradeInfo>();
+            var incomeMultiplier = _world.GetPool<IncomeMultiplier>();
+            var improvementPool =_world.GetPool<Improvement>();
+            var developmentLevelPool = _world.GetPool<DevelopmentLvl>();
 
-            foreach (var upgradeConfig in _config.UpgradesConfigs)
+            foreach (var upgradeConfig in _config.UpgradesConfigs.AsDictionary.Values)
             {
-                int entity = _ecsWorld.NewEntity();
+                int entity = _world.NewEntity();
                 InitializeBusinesses(upgradeInfoPool, incomeMultiplier, improvementPool, developmentLevelPool, upgradeConfig, entity);
             }
         }

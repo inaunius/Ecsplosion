@@ -4,7 +4,7 @@ using Inaunius.Ecsplosion.Configs;
 using Leopotam.EcsLite;
 using UnityEngine;
 
-namespace Inaunius.Ecsplosion.Architecture
+namespace Inaunius.Ecsplosion.Architecture.EntryPoint
 {
     public class WorldEntryPoint : MonoBehaviour
     {
@@ -12,24 +12,24 @@ namespace Inaunius.Ecsplosion.Architecture
 
         [SerializeField] private StringsCfg _stringsConfig;
 
-        private EcsWorld _ecsWorld;
+        private EcsWorld _world;
 
-        private EcsSystems _ecsSystems;
+        private EcsSystems _systems;
 
         private void Start()
         {
-            _ecsWorld = new EcsWorld();
-            _ecsSystems = new EcsSystems(_ecsWorld);
+            _world = new EcsWorld();
+            _systems = new EcsSystems(_world);
 
-            _ecsSystems.Init();
+            _systems.Init();
         }
 
-        private void Update() => _ecsSystems.Run();
+        private void Update() => _systems.Run();
 
         private void OnDestroy()
         {
-            _ecsSystems.Destroy();
-            _ecsWorld.Destroy();
+            _systems.Destroy();
+            _world.Destroy();
         }
   }
 }

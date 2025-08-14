@@ -6,30 +6,30 @@ using Leopotam.EcsLite;
 
 namespace Inaunius.Ecsplosion.InGame.Business.Systems
 {
-    public class LoadBusinessesSystem : IEcsInitSystem
+    public class SpawnBusinessesSystem : IEcsInitSystem
     {
         private readonly InGameCfg _config;
 
-        private EcsWorld _ecsWorld;
+        private EcsWorld _world;
 
-        public LoadBusinessesSystem(InGameCfg config)
+        public SpawnBusinessesSystem(InGameCfg config)
         {
             _config = config;
         }
 
         public void Init(IEcsSystems systems)
         {
-            _ecsWorld = systems.GetWorld();
+            _world = systems.GetWorld();
 
-            var businessInfoPool = _ecsWorld.GetPool<BusinessInfo>();
-            var baseIncomePool = _ecsWorld.GetPool<BaseIncome>();
-            var incomeDelayPool = _ecsWorld.GetPool<IncomeDelay>();
-            var improvementPool =_ecsWorld.GetPool<Improvement>();
-            var developmentLevelPool = _ecsWorld.GetPool<DevelopmentLvl>();
+            var businessInfoPool = _world.GetPool<BusinessInfo>();
+            var baseIncomePool = _world.GetPool<BaseIncome>();
+            var incomeDelayPool = _world.GetPool<IncomeDelay>();
+            var improvementPool =_world.GetPool<Improvement>();
+            var developmentLevelPool = _world.GetPool<DevelopmentLvl>();
 
-            foreach (var businessConfig in _config.BusinessConfigs)
+            foreach (var businessConfig in _config.BusinessConfigs.AsDictionary.Values)
             {
-                int entity = _ecsWorld.NewEntity();
+                int entity = _world.NewEntity();
                 InitializeBusinesses(businessInfoPool, baseIncomePool, incomeDelayPool, improvementPool, developmentLevelPool, businessConfig, entity);
             }
         }

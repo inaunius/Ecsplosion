@@ -8,6 +8,6 @@ namespace Inaunius.Ecsplosion.Configs
     public class StringsCfg : ScriptableObject
     {
         [field: SerializeField] public InspectorDictionary<BusinessId, string> BusinessNames { get; private set; }
-        [field: SerializeField] public InspectorDictionary<UpgradeId, string> UpgradeNames { get; private set; }
+        [field: SerializeField] public InspectorDictionary<BusinessUpgradeId, string> UpgradeNames { get; private set; }
     }
 }
