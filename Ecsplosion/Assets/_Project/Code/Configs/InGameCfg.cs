@@ -10,6 +10,7 @@ namespace Inaunius.Ecsplosion.Configs
     public class InGameCfg : ScriptableObject
     {
         [field: SerializeField] public BusinessConfigEntry[] BusinessConfigs { get; private set; }
+        
         [field: SerializeField] public BusinessUpgradeCfg[] UpgradesConfigs { get; private set; }
 
         private void OnValidate()

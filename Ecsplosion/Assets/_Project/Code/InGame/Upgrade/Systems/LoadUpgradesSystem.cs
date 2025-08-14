@@ -1,7 +1,6 @@
 using Inaunius.Ecsplosion.Configs;
-using Inaunius.Ecsplosion.InGame.Business.Components;
 using Inaunius.Ecsplosion.InGame.Shared.Components;
-using Inaunius.Ecsplosion.Static;
+using Inaunius.Ecsplosion.InGame.Upgrade.Components;
 using Leopotam.EcsLite;
 
 namespace Inaunius.Ecsplosion.InGame.Upgrade
@@ -21,34 +20,33 @@ namespace Inaunius.Ecsplosion.InGame.Upgrade
         {
             _ecsWorld = systems.GetWorld();
 
-            var businessInfoPool = _ecsWorld.GetPool<BusinessInfo>();
-            var baseIncomePool = _ecsWorld.GetPool<BaseIncome>();
-            var incomeDelayPool = _ecsWorld.GetPool<IncomeDelay>();
+            var upgradeInfoPool = _ecsWorld.GetPool<UpgradeInfo>();
+            var incomeMultiplier = _ecsWorld.GetPool<IncomeMultiplier>();
             var improvementPool =_ecsWorld.GetPool<Improvement>();
             var developmentLevelPool = _ecsWorld.GetPool<DevelopmentLvl>();
 
-            foreach (var businessConfig in _config.BusinessConfigs)
+            foreach (var upgradeConfig in _config.UpgradesConfigs)
             {
                 int entity = _ecsWorld.NewEntity();
-                InitializeBusinesses(businessInfoPool, baseIncomePool, incomeDelayPool, improvementPool, developmentLevelPool, businessConfig, entity);
+                InitializeBusinesses(upgradeInfoPool, incomeMultiplier, improvementPool, developmentLevelPool, upgradeConfig, entity);
             }
         }
 
         private static void InitializeBusinesses(
-            EcsPool<BusinessInfo> businessInfoPool,
-            EcsPool<BaseIncome> baseIncomePool,
-            EcsPool<IncomeDelay> incomeDelayPool,
+            EcsPool<UpgradeInfo> upgradeInfo,
+            EcsPool<IncomeMultiplier> incomeMultiplier,
             EcsPool<Improvement> improvementPool,
             EcsPool<DevelopmentLvl> developmentLevelPool,
-            InGameCfg.BusinessConfigEntry businessConfig,
+            BusinessUpgradeCfg upgradeConfig,
             int entity
         )
         {
-            businessInfoPool.Add(entity) = new BusinessInfo { Id = businessConfig.Config.Id };
-            baseIncomePool.Add(entity) = new BaseIncome { Value = businessConfig.Config.BaseIncome };
-            incomeDelayPool.Add(entity) = new IncomeDelay { ValueSeconds = businessConfig.Config.IncomeDelaySeconds };
-            improvementPool.Add(entity) = new Improvement { Cost = InGameCalculations.CalculateLevelCost(businessConfig.LvlAtStart, businessConfig.Config.BaseCost) };
-            developmentLevelPool.Add(entity) = new DevelopmentLvl { Value = businessConfig.LvlAtStart };
+            const int DefaultLvl = 0;
+
+            upgradeInfo.Add(entity) = new UpgradeInfo { Id = upgradeConfig.Id };
+            incomeMultiplier.Add(entity) = new IncomeMultiplier { ValuePercent = upgradeConfig.IncomeMultiplierPercent };
+            improvementPool.Add(entity) = new Improvement { Cost = upgradeConfig.Cost };
+            developmentLevelPool.Add(entity) = new DevelopmentLvl { Value = DefaultLvl };
         }
     }
 }
