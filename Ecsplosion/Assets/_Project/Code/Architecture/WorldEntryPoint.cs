@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using Inaunius.Ecsplosion.Configs;
+using Leopotam.EcsLite;
 using UnityEngine;
 
-public class WorldEntryPoint : MonoBehaviour
+namespace Inaunius.Ecsplosion.Architecture
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WorldEntryPoint : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private InGameCfg _inGameConfig;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        [SerializeField] private StringsCfg _stringsConfig;
+
+        private EcsWorld _ecsWorld;
+
+        private EcsSystems _ecsSystems;
+
+        private void Start()
+        {
+            _ecsWorld = new EcsWorld();
+            _ecsSystems = new EcsSystems(_ecsWorld);
+
+            _ecsSystems.Init();
+        }
+
+        private void Update() => _ecsSystems.Run();
+
+        private void OnDestroy()
+        {
+            _ecsSystems.Destroy();
+            _ecsWorld.Destroy();
+        }
+  }
 }
+

@@ -14,12 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BusinessConfigs>k__BackingField:
   - <Config>k__BackingField: {fileID: 11400000, guid: b22447b45e0bd7b4e92cbbf4f4a9fd0b, type: 2}
-    <IsBoughtAtStart>k__BackingField: 1
+    <LvlAtStart>k__BackingField: 1
   - <Config>k__BackingField: {fileID: 11400000, guid: 3a28e6a1597a563479a4df7222c7c239, type: 2}
-    <IsBoughtAtStart>k__BackingField: 0
+    <LvlAtStart>k__BackingField: 0
   - <Config>k__BackingField: {fileID: 11400000, guid: 6aa5143b7efa73647978c32b3d2ffea6, type: 2}
-    <IsBoughtAtStart>k__BackingField: 0
+    <LvlAtStart>k__BackingField: 0
   - <Config>k__BackingField: {fileID: 11400000, guid: 41bf9ce4a8432264ba84b46c4e73985a, type: 2}
-    <IsBoughtAtStart>k__BackingField: 0
+    <LvlAtStart>k__BackingField: 0
   - <Config>k__BackingField: {fileID: 11400000, guid: 6a54eb2e498ac8840b46b1a448a17a5b, type: 2}
-    <IsBoughtAtStart>k__BackingField: 0
+    <LvlAtStart>k__BackingField: 0
+  <UpgradesConfigs>k__BackingField:
+  - {fileID: 11400000, guid: 04e14f1d2425e6347a8f5c0719d0b4d0, type: 2}
+  - {fileID: 11400000, guid: 761155d6441a3524691c26fcf6aeb43c, type: 2}
+  - {fileID: 11400000, guid: aac11cde38b06c9418f7ec56639b5d7b, type: 2}
+  - {fileID: 11400000, guid: 45963a2b2791dc146b029d29ff736f8b, type: 2}
+  - {fileID: 11400000, guid: ac9586a5249bc2147a3c7397351574f2, type: 2}
+  - {fileID: 11400000, guid: 4d835ea8485a8334992ad095ea6badb1, type: 2}
+  - {fileID: 11400000, guid: ddd3761147dd63c4d94e41047974d7a1, type: 2}
+  - {fileID: 11400000, guid: 7a3f1d0eec3d48b42b4ba0be93dad273, type: 2}
+  - {fileID: 11400000, guid: ddccf71cde94a284cb02873115b4a268, type: 2}
+  - {fileID: 11400000, guid: b848c5de8a7a89f49a41e4bd51fde85c, type: 2}

@@ -1,5 +1,5 @@
 using Inaunius.Ecsplosion.Static.Enums;
-using Inaunius.GameB.Common;
+using Inaunius.Ecsplosion.Common;
 using UnityEngine;
 
 namespace Inaunius.Ecsplosion.Configs

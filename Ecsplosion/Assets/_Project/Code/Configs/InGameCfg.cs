@@ -10,22 +10,26 @@ namespace Inaunius.Ecsplosion.Configs
     public class InGameCfg : ScriptableObject
     {
         [field: SerializeField] public BusinessConfigEntry[] BusinessConfigs { get; private set; }
+        [field: SerializeField] public BusinessUpgradeCfg[] UpgradesConfigs { get; private set; }
 
         private void OnValidate()
         {
             var businessIds = new List<BusinessId>();
             var upgradesIds = new List<UpgradeId>();
+            
             foreach (var businessCfg in BusinessConfigs)
             {
                 if (businessIds.Contains(businessCfg.Config.Id))
                 {
                     throw new ArgumentException($"Business id duplicate {businessCfg.Config.Id}!");
                 }
-                if (businessCfg.Config.Upgrades.Any(upgrade => upgradesIds.Contains(upgrade.Id)))
+            }
+            foreach (var upgradeCfg in UpgradesConfigs)
+            {
+                if (upgradesIds.Contains(upgradeCfg.Id))
                 {
-                    throw new ArgumentException($"Upgrade id duplicate in {businessCfg.Config.Id}!");
+                    throw new ArgumentException($"Upgrade id duplicate {upgradeCfg.Id}!");
                 }
-                businessIds.Add(businessCfg.Config.Id);
             }
         }
 
@@ -34,7 +38,7 @@ namespace Inaunius.Ecsplosion.Configs
         {
             [field: SerializeField] public BusinessCfg Config { get; private set; }
 
-            [field: SerializeField] public bool IsBoughtAtStart { get; private set; }
+            [field: SerializeField] public int LvlAtStart { get; private set; }
         }
     }
 }

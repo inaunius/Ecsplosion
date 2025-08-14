@@ -52,6 +52,6 @@
         "Temp/": true
     },
 		"dotnet.defaultSolution": "Ecsplosion.sln",
-        "editor.detectIndentation": true,
+        "editor.detectIndentation": false,
         "editor.insertSpaces": true
 }

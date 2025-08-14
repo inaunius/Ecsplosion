@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Inaunius.GameB.Common 
+namespace Inaunius.Ecsplosion.Common 
 {
   [Serializable]
   public class InspectorDictionary<TKey, TValue> {
@@ -24,10 +24,10 @@ namespace Inaunius.GameB.Common
 		}
 
 		[Serializable]
-    private class KeyValuePairEntry<UKey, UValue>
-    {
-      [field: SerializeField] public UKey Key { get; private set; }
-      [field: SerializeField] public UValue Value { get; private set; }
-    }
+        private class KeyValuePairEntry<UKey, UValue>
+        {
+          [field: SerializeField] public UKey Key { get; private set; }
+          [field: SerializeField] public UValue Value { get; private set; }
+        }
   } 
 }
