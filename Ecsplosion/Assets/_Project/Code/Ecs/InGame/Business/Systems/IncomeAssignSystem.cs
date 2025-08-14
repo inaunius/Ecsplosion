@@ -1,9 +1,9 @@
 using Inaunius.Ecsplosion.Configs;
-using Inaunius.Ecsplosion.InGame.Business.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Business.Components;
 using Leopotam.EcsLite;
 using UnityEngine;
 
-namespace Inaunius.Ecsplosion.InGame.Business
+namespace Inaunius.Ecsplosion.Ecs.InGame.Business.Systems
 {
     public class IncomeAssignSystem : IEcsInitSystem, IEcsRunSystem
     {

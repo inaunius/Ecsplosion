@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Inaunius.Ecsplosion.Static.Enums;
 
-namespace Inaunius.Ecsplosion.Architecture.Progress
+namespace Inaunius.Ecsplosion.Ecs.Architecture.Progress
 {
     [Serializable]
     public struct CurrentProgress : ICurrentProgress

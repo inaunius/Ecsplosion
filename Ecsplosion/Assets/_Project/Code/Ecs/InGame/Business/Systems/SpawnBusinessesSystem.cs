@@ -1,10 +1,10 @@
 using Inaunius.Ecsplosion.Configs;
-using Inaunius.Ecsplosion.InGame.Business.Components;
-using Inaunius.Ecsplosion.InGame.Shared.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Business.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Shared.Components;
 using Inaunius.Ecsplosion.Static;
 using Leopotam.EcsLite;
 
-namespace Inaunius.Ecsplosion.InGame.Business.Systems
+namespace Inaunius.Ecsplosion.Ecs.InGame.Business.Systems
 {
     public class SpawnBusinessesSystem : IEcsInitSystem
     {

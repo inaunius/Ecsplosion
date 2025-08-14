@@ -1,12 +1,12 @@
 using System.Linq;
 using Inaunius.Ecsplosion.Configs;
-using Inaunius.Ecsplosion.InGame.Balance.Components;
-using Inaunius.Ecsplosion.InGame.Business.Components;
-using Inaunius.Ecsplosion.InGame.Shared.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Balance.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Business.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Shared.Components;
 using Inaunius.Ecsplosion.Static;
 using Leopotam.EcsLite;
 
-namespace Inaunius.Ecsplosion.InGame.Balance.Systems
+namespace Inaunius.Ecsplosion.Ecs.InGame.Balance.Systems
 {
     public class IncomeToBalanceSystem : IEcsInitSystem, IEcsRunSystem
     {
@@ -40,6 +40,7 @@ namespace Inaunius.Ecsplosion.InGame.Balance.Systems
 
                 float income = InGameCalculations.CalculateIncome(businessLvl, businessConfig.Config.BaseIncome, upgradesPercents);
                 _world.GetPool<CurrentBalance>().Get(_balanceFilter.GetSingle()).Value += income;
+                _world.GetPool<IncomeSourceTag>().Del(entity);            
             }
         }
     }

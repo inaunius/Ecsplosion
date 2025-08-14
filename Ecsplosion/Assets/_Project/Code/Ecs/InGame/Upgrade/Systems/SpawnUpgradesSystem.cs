@@ -1,9 +1,9 @@
 using Inaunius.Ecsplosion.Configs;
-using Inaunius.Ecsplosion.InGame.Shared.Components;
-using Inaunius.Ecsplosion.InGame.Upgrade.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Shared.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Upgrade.Components;
 using Leopotam.EcsLite;
 
-namespace Inaunius.Ecsplosion.InGame.Upgrade
+namespace Inaunius.Ecsplosion.Ecs.InGame.Upgrade
 {
     public class SpawnUpgradesSystem : IEcsInitSystem
     {

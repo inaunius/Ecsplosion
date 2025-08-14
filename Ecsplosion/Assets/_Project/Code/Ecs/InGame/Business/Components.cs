@@ -1,7 +1,7 @@
 using Inaunius.Ecsplosion.Common;
 using Inaunius.Ecsplosion.Static.Enums;
 
-namespace Inaunius.Ecsplosion.InGame.Business.Components
+namespace Inaunius.Ecsplosion.Ecs.InGame.Business.Components
 {
     public struct BusinessInfo { public BusinessId Id { get; set; } }
 

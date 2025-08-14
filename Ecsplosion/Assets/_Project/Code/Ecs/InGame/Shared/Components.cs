@@ -1,6 +1,6 @@
 using Inaunius.Ecsplosion.Static.Enums;
 
-namespace Inaunius.Ecsplosion.InGame.Shared.Components
+namespace Inaunius.Ecsplosion.Ecs.InGame.Shared.Components
 {
     public struct Improvement { public float Cost { get; set; } }
     

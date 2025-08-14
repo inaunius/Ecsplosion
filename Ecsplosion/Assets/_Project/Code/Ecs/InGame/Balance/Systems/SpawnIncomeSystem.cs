@@ -1,7 +1,7 @@
-using Inaunius.Ecsplosion.InGame.Balance.Components;
+using Inaunius.Ecsplosion.Ecs.InGame.Balance.Components;
 using Leopotam.EcsLite;
 
-namespace Inaunius.Ecsplosion.InGame.Balance.Systems
+namespace Inaunius.Ecsplosion.Ecs.InGame.Balance.Systems
 {
     public class SpawnIncomeSystem : IEcsInitSystem
     {

@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace Inaunius.Ecsplosion.UI
+namespace Inaunius.Ecsplosion.UIView
 {
-    public class BusinessCardUI : MonoBehaviour
+    public class BusinessCardUIView : MonoBehaviour
     {
         const string LvlTextTemplate = "LVL:\n{0}";
 

@@ -1,9 +1,9 @@
 using TMPro;
 using UnityEngine;
 
-namespace Inaunius.Ecsplosion.UI
+namespace Inaunius.Ecsplosion.UIView
 {
-    public class BalanceDisplayUI : MonoBehaviour
+    public class BalanceDisplayUIView : MonoBehaviour
     {
         const string BalanceValueTextTemplate = "{0}$";
 
