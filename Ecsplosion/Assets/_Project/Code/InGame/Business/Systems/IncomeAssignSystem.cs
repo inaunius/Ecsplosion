@@ -28,11 +28,11 @@ namespace Inaunius.Ecsplosion.InGame.Business
                 var businessInfo = _world.GetPool<BusinessInfo>().Get(entity);
                 var timeLeft = _world.GetPool<IncomeTimeLeft>().Get(entity);
 
-                timeLeft.TimeLeftTimer.PassTime(Time.deltaTime);
-                if (timeLeft.TimeLeftTimer.IsTimeOut)
+                timeLeft.Value = Mathf.Max(timeLeft.Value - Time.deltaTime, 0f);
+                if (timeLeft.Value == 0f)
                 {
-                    _world.GetPool<IncomeReceiverTag>().Add(entity);
-                    timeLeft.TimeLeftTimer.ResetTimer(_config.BusinessConfigs.AsDictionary[businessInfo.Id].Config.IncomeDelaySeconds);
+                    _world.GetPool<IncomeSourceTag>().Add(entity);
+                    timeLeft.Value = _config.BusinessConfigs.AsDictionary[businessInfo.Id].Config.IncomeDelaySeconds;
                 }
             }
         }
