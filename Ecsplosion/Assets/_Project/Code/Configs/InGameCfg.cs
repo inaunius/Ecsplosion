@@ -12,7 +12,8 @@ namespace Inaunius.Ecsplosion.Configs
     {
         [field: SerializeField] public InspectorDictionary<BusinessId, BusinessConfigEntry> BusinessConfigs { get; private set; }
         
-        [field: SerializeField] public InspectorDictionary<UpgradeId, BusinessUpgradeCfg> UpgradesConfigs { get; private set; }
+        [field: SerializeField] public InspectorDictionary<UpgradeId, UpgradeCfg> UpgradesConfigs { get; private set; }
+
 
         [Serializable]
         public struct BusinessConfigEntry

@@ -1,6 +1,7 @@
 using Inaunius.Ecsplosion.Configs;
 using Inaunius.Ecsplosion.Ecs.InGame.Shared.Components;
 using Inaunius.Ecsplosion.Ecs.InGame.Upgrade.Components;
+using Inaunius.Ecsplosion.Static.Enums;
 using Leopotam.EcsLite;
 
 namespace Inaunius.Ecsplosion.Ecs.InGame.Upgrade
@@ -25,28 +26,29 @@ namespace Inaunius.Ecsplosion.Ecs.InGame.Upgrade
             var improvementPool =_world.GetPool<Improvement>();
             var developmentLevelPool = _world.GetPool<DevelopmentLvl>();
 
-            foreach (var upgradeConfig in _config.UpgradesConfigs.AsDictionary.Values)
+            foreach (var upgradeConfigKv in _config.UpgradesConfigs.AsDictionary)
             {
                 int entity = _world.NewEntity();
-                InitializeBusinesses(upgradeInfoPool, incomeMultiplier, improvementPool, developmentLevelPool, upgradeConfig, entity);
+                InitializeBusinesses(upgradeInfoPool, incomeMultiplier, improvementPool, developmentLevelPool, upgradeConfigKv.Value, upgradeConfigKv.Key, entity);
             }
         }
 
         private static void InitializeBusinesses(
-            EcsPool<UpgradeInfo> upgradeInfo,
-            EcsPool<IncomeMultiplier> incomeMultiplier,
-            EcsPool<Improvement> improvementPool,
-            EcsPool<DevelopmentLvl> developmentLevelPool,
-            BusinessUpgradeCfg upgradeConfig,
+            EcsPool<UpgradeInfo> upgradeInfoPool,
+            EcsPool<IncomeMultiplier> incomeMultiplierPool,
+            EcsPool<Improvement> improvementPoolPool,
+            EcsPool<DevelopmentLvl> developmentLevelPoolPool,
+            UpgradeCfg upgradeConfig,
+            UpgradeId id,
             int entity
         )
         {
             const int DefaultLvl = 0;
 
-            upgradeInfo.Add(entity) = new UpgradeInfo { Id = upgradeConfig.Id };
-            incomeMultiplier.Add(entity) = new IncomeMultiplier { ValuePercent = upgradeConfig.IncomeMultiplierPercent };
-            improvementPool.Add(entity) = new Improvement { Cost = upgradeConfig.Cost };
-            developmentLevelPool.Add(entity) = new DevelopmentLvl { Value = DefaultLvl };
+            upgradeInfoPool.Add(entity) = new UpgradeInfo { Id = id };
+            incomeMultiplierPool.Add(entity) = new IncomeMultiplier { ValuePercent = upgradeConfig.IncomeMultiplierPercent };
+            improvementPoolPool.Add(entity) = new Improvement { Cost = upgradeConfig.Cost };
+            developmentLevelPoolPool.Add(entity) = new DevelopmentLvl { Value = DefaultLvl };
         }
     }
 }

@@ -1,3 +1,4 @@
+using Inaunius.Ecsplosion.Architecture.Services.ProgressSaveLoad;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Inaunius.Ecsplosion.UIView
 
         [SerializeField] private TextMeshProUGUI _balanceValueText;
 
-        public void SetBalanceValue(float value) =>
-            _balanceValueText.text = string.Format(BalanceValueTextTemplate, value);
+        public void UpdateFromSnapshot(ProgressSnapshot snapshot) =>
+            _balanceValueText.text = string.Format(BalanceValueTextTemplate, snapshot.Balance);
     } 
 }
