@@ -47,7 +47,7 @@ namespace Inaunius.Ecsplosion.Ecs.InGame.Business.Systems
             businessInfoPool.Add(entity) = new BusinessInfo { Id = businessConfig.Config.Id };
             baseIncomePool.Add(entity) = new BaseIncome { Value = businessConfig.Config.BaseIncome };
             incomeDelayPool.Add(entity) = new IncomeDelay { ValueSeconds = businessConfig.Config.IncomeDelaySeconds };
-            improvementPool.Add(entity) = new Improvement { Cost = InGameCalculations.CalculateLevelCost(businessConfig.LvlAtStart, businessConfig.Config.BaseCost) };
+            improvementPool.Add(entity) = new Improvement { Cost = InGameCalculations.CalculateLvlUpCost(businessConfig.LvlAtStart, businessConfig.Config.BaseCost) };
             developmentLevelPool.Add(entity) = new DevelopmentLvl { Value = businessConfig.LvlAtStart };
         }
     }

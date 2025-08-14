@@ -7,7 +7,7 @@ namespace Inaunius.Ecsplosion.Static
         public static float CalculateIncome(int lvl, float baseIncome, params float[] upgradesMultipliersPercent) =>
             lvl * baseIncome * (1f + upgradesMultipliersPercent.Aggregate(0f, (sum, multiplier) => sum + multiplier));
 
-        public static float CalculateLevelCost(int currentLvl, float baseCost) =>
+        public static float CalculateLvlUpCost(int currentLvl, float baseCost) =>
             (currentLvl + 1) * baseCost;
     }
 }

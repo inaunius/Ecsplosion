@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using Inaunius.Ecsplosion.Static.Enums;
 
-namespace Inaunius.Ecsplosion.Ecs.Architecture.Progress
+namespace Inaunius.Ecsplosion.Architecture.Services.ProgressSaveLoad
 {
     [Serializable]
-    public struct CurrentProgress : ICurrentProgress
+    public struct ProgressSnapshot : IProgressSnapshot
     {
         public float Balance { get; set; }
 
-        public Dictionary<BusinessId, IBusinessProgress> Businesses { get; set; }
+        public Dictionary<BusinessId, BusinessProgress> Businesses { get; set; }
 
-        public Dictionary<BusinessId, IUpgradeProgress> Upgrades { get; set; }
+        public Dictionary<UpgradeId, UpgradeProgress> Upgrades { get; set; }
     }
 
     [Serializable]
@@ -28,13 +28,13 @@ namespace Inaunius.Ecsplosion.Ecs.Architecture.Progress
         public int DevelopmentLvl { get; set; }
     }
 
-    public interface ICurrentProgress
+    public interface IProgressSnapshot
     {
         float Balance { get; }
 
-        Dictionary<BusinessId, IBusinessProgress> Businesses { get; }
+        Dictionary<BusinessId, BusinessProgress> Businesses { get; }
 
-        Dictionary<BusinessId, IUpgradeProgress> Upgrades { get; }
+        Dictionary<UpgradeId, UpgradeProgress> Upgrades { get; }
     }
 
     public interface IBusinessProgress

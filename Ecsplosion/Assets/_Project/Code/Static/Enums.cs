@@ -2,7 +2,7 @@ namespace Inaunius.Ecsplosion.Static.Enums
 {
     public enum BusinessId { Business1, Business2, Business3, Business4, Business5 }
 
-    public enum BusinessUpgradeId
+    public enum UpgradeId
     {
         Business1Upgrade1,
         Business1Upgrade2,
