@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Inaunius.Ecsplosion.Common 
+namespace Inaunius.Ecsplosion.Common
 {
     [Serializable]
     public class InspectorDictionary<TKey, TValue>

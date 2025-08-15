@@ -15,7 +15,8 @@ namespace Inaunius.Ecsplosion
             set
             {
                 _progress = value;
-                _fillImage.transform.localScale = new Vector3(
+                _fillImage.transform.localScale = new Vector3
+                (
                     _progress,
                     _fillImage.transform.localScale.y,
                     _fillImage.transform.localScale.z
@@ -23,9 +24,6 @@ namespace Inaunius.Ecsplosion
             }
         }
 
-		private void OnValidate()
-		{
-            Progress = _progress;
-		}
-	}
+        private void OnValidate() => Progress = _progress;
+    }
 }

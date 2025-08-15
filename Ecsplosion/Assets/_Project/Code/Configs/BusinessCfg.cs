@@ -9,8 +9,6 @@ namespace Inaunius.Ecsplosion.Configs
     [CreateAssetMenu(menuName = "_Configs/BusinessCfg")]
     public class BusinessCfg : ScriptableObject
     {
-        // [field: SerializeField] public BusinessId Id { get; private set; }
-
         [field: SerializeField] public float IncomeDelaySeconds { get; private set; }
 
         [field: SerializeField] public float BaseCost { get; private set; }

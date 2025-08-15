@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Inaunius.Ecsplosion.Common;
 using Inaunius.Ecsplosion.Static.Enums;
 using UnityEngine;
